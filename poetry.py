@@ -2,6 +2,11 @@
 #"Do you think God stays in heaven because he, too, lives in fear of what he created?"
 #Because I made my poem All Star by Smash Mouth. I GET it.
 #'Poem' credits to Smash Mouth
+#I'm so sorry for this
+
+import random
+import re
+
 poem = '''Somebody once told me the world is gonna roll me
 I ain't the sharpest tool in the shed
 She was looking kind of dumb with her finger and her thumb
@@ -53,13 +58,25 @@ And all that glitters is gold
 Only shooting stars break the mold
 And all that glitters is gold
 Only shooting stars break the mold'''
-Line_Break = '''#!!!----------!Poems!----------!!!#'''
+
 lines_list = poem.split("\n")
+Line_Apology = '''#!!!------!I'm so sorry!------!!!#
+#!!!---!Why Am I Like This!---!!!#
+#!!!------!I'm so sorry!------!!!#'''
+Line_Break1 = '''#!!!----------!Poems!----------!!!#
+#!!!----------!Poems!----------!!!#
+#!!!----------!Poems!----------!!!#'''
+Line_Break2 = '''#!!!------!Reverse Poems!------!!!#
+#!!!----!Poems But Reverse!----!!!#
+#!!!------!Reverse Poems!------!!!#'''
+Line_Break3 = '''#!!!-------!RandomPoems!-------!!!#
+#!!-!Poems That Are Randomized!-!!#
+#!!!-------!RandomPoems!-------!!!#'''
+print(Line_Apology)
 print(lines_list)
-print(Line_Break)
+print(Line_Break1)
 
 #!----------!Functions!----------#
-
 #Prints the lines of the 'poem' but in reverse. All stylish like.
 def lines_printed_backwards():
     '''This function takes in a list of strings containing the lines of your poem as arguments and will print the poem lines out in reverse with the line numbers reversed.'''
@@ -70,19 +87,23 @@ def lines_printed_backwards():
 #Prints the lines of the 'poem' but randomized. Chaotic Evil.
 def lines_printed_random():
     '''Your code should implement the lines_printed_random() function which will randomly select lines from a list of strings and print them out in random order. '''
-    random = lines_list.random()
-    for i in range(len(lines_list)):
-        print(lines_list[i])
+    random.shuffle(lines_list)
+    print(*lines_list)
 
-    pass
-
-
-def custom_funciton():
+#Custom Function
+#Removes a letter of the user's choice.
+def remove_letter():
     '''Does something of your choosing'''
+    user_letter = input('Enter a letter: ')
+    print(user_letter)
+
 
 #!----------!Function Calls!----------!#
 lines_printed_backwards()
-print(Line_Break)
+print(Line_Break2)
+lines_printed_random()
+print(Line_Break3)
+remove_letter()
 
 
 #!----------!Test Code!----------!#
