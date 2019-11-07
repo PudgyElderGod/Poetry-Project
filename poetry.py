@@ -59,43 +59,58 @@ Only shooting stars break the mold
 And all that glitters is gold
 Only shooting stars break the mold'''
 
-lines_list = poem.split("\n")
+#!----------!Open File Stretch Challenge!----------!#
+f = open("allstar.txt", "r")
+file_poem = f.readlines()
+f.close
+
+#!----------!Line Breaks!----------!#
+lines_list = poem
 Line_Apology = '''#!!!------!I'm so sorry!------!!!#
 #!!!---!Why Am I Like This!---!!!#
 #!!!------!I'm so sorry!------!!!#'''
-Line_Break1 = '''#!!!----------!Poems!----------!!!#
-#!!!----------!Poems!----------!!!#
-#!!!----------!Poems!----------!!!#'''
-Line_Break2 = '''#!!!------!Reverse Poems!------!!!#
+Line_Break1 = '''#!!!------!Reverse Poems!------!!!#
 #!!!----!Poems But Reverse!----!!!#
 #!!!------!Reverse Poems!------!!!#'''
-Line_Break3 = '''#!!!-------!RandomPoems!-------!!!#
+Line_Break2 = '''#!!!-------!RandomPoems!-------!!!#
 #!!-!Poems That Are Randomized!-!!#
 #!!!-------!RandomPoems!-------!!!#'''
+Line_Break3 = '''#!!!-----!Remove a letter!-----!!!# '''
 print(Line_Apology)
-print(lines_list)
+print(lines_list, sep="\n")
 print(Line_Break1)
 
 #!----------!Functions!----------#
 #Prints the lines of the 'poem' but in reverse. All stylish like.
 def lines_printed_backwards():
     '''This function takes in a list of strings containing the lines of your poem as arguments and will print the poem lines out in reverse with the line numbers reversed.'''
+    lines_list = file_poem
     reverse = lines_list.reverse()
-    for i in range(len(lines_list)):
-        print(lines_list[i])
+    print(*lines_list, sep="\n")
+    # for i in range(len(lines_list)):
+    #     print(lines_list[i])
 
 #Prints the lines of the 'poem' but randomized. Chaotic Evil.
 def lines_printed_random():
     '''Your code should implement the lines_printed_random() function which will randomly select lines from a list of strings and print them out in random order. '''
+    lines_list = file_poem
     random.shuffle(lines_list)
-    print(*lines_list)
+    print(*lines_list, sep="\n")
 
 #Custom Function
-#Removes a letter of the user's choice.
-def remove_letter():
+#Replaces letters for other letters.
+#Makes the entirely thing completely awful.
+def replace_line():
     '''Does something of your choosing'''
-    user_letter = input('Enter a letter: ')
-    print(user_letter)
+    f = open("allstar.txt", "r")
+    file_poem = f.readlines()
+    f.close
+
+    replacement=poem.replace("e", "a").replace("o", "u").replace("me", "somebody")
+    lines_list=replacement.splitlines()
+    print(*lines_list, sep="\n")
+
+
 
 
 #!----------!Function Calls!----------!#
@@ -103,7 +118,7 @@ lines_printed_backwards()
 print(Line_Break2)
 lines_printed_random()
 print(Line_Break3)
-remove_letter()
+replace_line()
 
 
 #!----------!Test Code!----------!#
