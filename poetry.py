@@ -100,29 +100,90 @@ def lines_printed_random():
 #Custom Function
 #Replaces letters for other letters.
 #Makes the entirely thing completely awful.
-def replace_line():
-    '''Does something of your choosing'''
+def replace_letters():
+    #Refreshes the poem.
     f = open("allstar.txt", "r")
     file_poem = f.readlines()
     f.close
-
+    #The function itself.
     replacement=poem.replace("e", "a").replace("o", "u").replace("me", "somebody")
+    lines_list=replacement.splitlines()
+    print(*lines_list, sep="\n")
+
+#Just wanted to see if I could do this.
+def replace_custom_letters():
+    #Refreshes the poem
+    f = open("allstar.txt", "r")
+    file_poem = f.readlines()
+    f.close
+    #Actual Function
+    i1=input("Enter a letter you want replaced:")
+    i2=input("Enter the letter you want to replace it with:")
+    print("#!!!----!Time To Get Wild!----!!!#")
+    replacement=poem.replace(i1, i2)
     lines_list=replacement.splitlines()
     print(*lines_list, sep="\n")
 
 
 
 
+
 #!----------!Function Calls!----------!#
-lines_printed_backwards()
-print(Line_Break2)
-lines_printed_random()
-print(Line_Break3)
-replace_line()
+# lines_printed_backwards()
+# print(Line_Break2)
+# lines_printed_random()
+# print(Line_Break3)
+# replace_letters()
+# print(Line_Break1)
+# replace_custom_letters()
 
 
 #!----------!Test Code!----------!#
-#TODO: Get poem string into list of lines
-#def lines_printed_backwards():
-#def lines_printed_random():
 #def custom_funciton():
+#The Percy Bysshe Shelley version, of course. I'm not a monster.
+test_poem = """I met a traveller from an antique land
+Who said: Two vast and trunkless legs of stone
+Stand in the desert. Near them, on the sand,
+Half sunk, a shattered visage lies, whose frown,
+And wrinkled lip, and sneer of cold command,
+Tell that its sculptor well those passions read
+Which yet survive, stamped on these lifeless things,
+The hand that mocked them and the heart that fed:
+And on the pedestal these words appear:
+'My name is Ozymandias, king of kings:
+Look on my works, ye Mighty, and despair!'
+Nothing beside remains. Round the decay
+Of that colossal wreck, boundless and bare
+The lone and level sands stretch far away."""
+
+Line_Break_Test = """#!---------!Test Code!---------!#
+#!------!Code That Tests!------!#
+#!---------!Test Code!---------!#
+"""
+
+#Test Functions#
+def test_lines_printed_backwards():
+    lines_list = test_poem.split("\n")
+    reverse = lines_list.reverse()
+    print(*lines_list, sep="\n")
+
+def test_lines_printed_random():
+    lines_list = test_poem.split("\n")
+    random.shuffle(lines_list)
+    print(*lines_list, sep="\n")
+
+def test_custom_function():
+    i1=input("Enter a letter you want replaced:")
+    i2=input("Enter the letter you want to replace it with:")
+    print("#!!!----!Time To Get Wild!----!!!#")
+    replacement=test_poem.replace(i1, i2)
+    lines_list=replacement.splitlines()
+    print(*lines_list, sep="\n")
+
+#Test Calls
+# test_lines_printed_backwards()
+# print(Line_Break_Test)
+# test_lines_printed_random()
+# print(Line_Break_Test)
+# test_custom_function()
+# print(Line_Break_Test)
