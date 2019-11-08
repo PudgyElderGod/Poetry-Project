@@ -129,13 +129,13 @@ def replace_custom_letters():
 
 
 #!----------!Function Calls!----------!#
-# lines_printed_backwards()
-# print(Line_Break2)
-# lines_printed_random()
-# print(Line_Break3)
+lines_printed_backwards()
+print(Line_Break2)
+lines_printed_random()
+print(Line_Break3)
 # replace_letters()
 # print(Line_Break1)
-# replace_custom_letters()
+replace_custom_letters()
 
 
 #!----------!Test Code!----------!#
